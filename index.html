@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TattooEnd — Studio Demo | Modern Tattoo Studio Website</title>
+  <meta name="description" content="TattooEnd — Professional tattoo studio. Portfolio, booking, artists and contact. Demo homepage designed to convert Instagram traffic to bookings." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070707;
+      --muted:#9aa0a6;
+      --accent:#e6b45c;
+      --accent-2:#d49b3a;
+      --card:#0f0f0f;
+      --glass: rgba(255,255,255,0.04);
+      --max-width:1200px;
+      --radius:14px;
+      --ff-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --ff-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,#060606 0%, #0b0b0b 100%);
+      color:#eee;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,7,7,0.9),rgba(7,7,7,0.6));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:42px;height:42px;border-radius:8px;background:linear-gradient(180deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#070707;font-family:var(--ff-serif)}
+    .site-title{font-weight:700;font-size:15px}
+    nav ul{display:flex;gap:16px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{color:#dfe6ea;text-decoration:none;font-weight:500;font-size:14px}
+    .cta{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#070707;font-weight:700;text-decoration:none}
+
+    /* HERO */
+    .hero{padding:56px 0;display:grid;grid-template-columns:1fr 420px;align-items:center;gap:36px}
+    .hero-left h1{font-family:var(--ff-serif);font-size:44px;margin:0 0 10px 0;letter-spacing:-0.02em}
+    .sub{color:var(--muted);font-size:16px;margin-bottom:22px}
+    .hero-cta{display:flex;gap:12px}
+    .btn-ghost{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);color:#fff;text-decoration:none}
+    .hero-meta{display:flex;gap:12px;margin-top:18px;color:var(--muted);font-size:14px}
+
+    /* right hero card */
+    .studio-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+    .studio-card img{width:100%;height:240px;object-fit:cover;border-radius:10px}
+    .studio-info{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+    .studio-info .loc{color:var(--muted);font-size:13px}
+
+    /* services */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+    .service{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .service h4{margin:0 0 8px 0}
+    .service p{color:var(--muted);font-size:14px;margin:0}
+
+    /* portfolio */
+    .portfolio{margin-top:42px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+    /* artists */
+    .artists{display:flex;gap:12px;margin-top:28px}
+    .artist{flex:1;background:var(--glass);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);text-align:center}
+    .artist img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.04)}
+    .artist h5{margin:10px 0 4px 0}
+    .artist p{color:var(--muted);font-size:13px;margin:0}
+
+    /* testimonials */
+    .testimonials{margin-top:36px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .testimonials p{color:var(--muted)}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:36px}
+    .contact form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:12px;border-radius:8px;color:#fff}
+    .map{border-radius:10px;overflow:hidden;height:100%;min-height:260px;border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin-top:52px;padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .nav{padding:10px}
+      nav ul{display:none}
+      .hero-left h1{font-size:30px}
+      .gallery img{height:140px}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .kicker{color:var(--accent);font-weight:700;letter-spacing:0.04em;font-size:12px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
+
+    /* modal lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:120}
+    .lightbox img{max-width:90%;max-height:90%;border-radius:10px}
+    .close-x{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+
+    /* form button */
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:12px 16px;border-radius:10px;border:none;color:#070707;font-weight:700;text-decoration:none;cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">TE</div>
+        <div>
+          <div class="site-title">TattooEnd Studio</div>
+          <div class="muted" style="font-size:12px">Budapest & London</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#artists">Artists</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="pill" href="#book">Book</a>
+        <a class="cta" href="https://instagram.com/tattooend.studio" target="_blank" rel="noreferrer noopener">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Custom Tattoo Studio</div>
+        <h1>Bold lines. Clean style. Timeless tattoos.</h1>
+        <p class="sub">TattooEnd brings premium custom tattoos from conceptual sketch to healed result. Browse the portfolio, meet our artists and book an appointment — simple and secure.</p>
+        <div class="hero-cta">
+          <a class="cta" href="#portfolio">View Portfolio</a>
+          <a class="btn-ghost" href="#contact">Get a Quote</a>
+        </div>
+        <div class="hero-meta">
+          <div>• Walk-ins & appointments</div>
+          <div>• Hygiene certified</div>
+          <div>• Tattoo care guidance</div>
+        </div>
+      </div>
+
+      <aside class="studio-card">
+        <!-- Replace the src with a strong Instagram image from their feed for live demo -->
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Tattoo artist at work" />
+        <div class="studio-info">
+          <div>
+            <strong>TattooEnd Studio</strong>
+            <div class="loc">Budapest • London</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted">Open: Mon–Sat</div>
+            <div class="muted">+36 20 123 4567</div>
+          </div>
+        </div>
+        <div class="artists" style="margin-top:12px">
+          <div class="artist">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Artist 1" />
+            <h5>Alex</h5>
+            <p class="muted">Blackwork & custom pieces</p>
+          </div>
+          <div class="artist">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Artist 2" />
+            <h5>Sofia</h5>
+            <p class="muted">Realism & portraits</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Services</h2>
+        <div class="muted">Custom designs • Cover-ups • Aftercare</div>
+      </div>
+      <div class="grid-3">
+        <div class="service">
+          <h4>Custom Tattoos</h4>
+          <p>Fully custom designs — consultation, sketch and appointment. Perfect for first-time or returning clients.</p>
+        </div>
+        <div class="service">
+          <h4>Cover-ups & Reworks</h4>
+          <p>Cover older work with a new concept or refine existing pieces — specialized techniques for clean results.</p>
+        </div>
+        <div class="service">
+          <h4>Consultation & Aftercare</h4>
+          <p>Pre-appointment consultation, healing instructions and follow-up checks to guarantee the best outcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Selected Work</h2>
+        <a class="muted" href="#">View full gallery</a>
+      </div>
+      <div class="gallery" style="margin-top:14px">
+        <!-- Replace the src with direct links to strong Instagram images for the demo. These are placeholders. -->
+        <img src="tattoo5.webp" alt="Tattoo 1" data-full="tattoo5.webp" />
+        <img src="tattoo6.jpg" alt="Tattoo 2" data-full="tattoo6.jpg" />
+        <img src="tattoo3.jpg" alt="Tattoo 3" data-full="tattoo3.jpg" />
+        <img src="tattoo4.jpg" alt="Tattoo 4" data-full="tattoo4.jpg" />
+      </div>
+    </section>
+
+    <!-- Artists & team -->
+    <section id="artists">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Our Artists</h2>
+        <div class="muted">Book a consultation with the artist of your choice</div>
+      </div>
+      <div class="artists" style="margin-top:12px">
+        <div class="artist">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Alex" />
+          <h5>Alex</h5>
+          <p class="muted">Specialty: Blackwork, geometric</p>
+        </div>
+        <div class="artist">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Sofia" />
+          <h5>Sofia</h5>
+          <p class="muted">Specialty: Realism & portraits</p>
+        </div>
+        <div class="artist">
+          <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Marco" />
+          <h5>Marco</h5>
+          <p class="muted">Specialty: Color & illustrative</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h3 style="margin:0 0 8px 0">What clients say</h3>
+      <div style="display:flex;gap:12px;overflow:auto;padding-bottom:8px">
+        <div style="min-width:220px">
+          <strong>Anna K.</strong>
+          <p class="muted">Amazing experience — Alex nailed the design, clean and fast.</p>
+        </div>
+        <div style="min-width:220px">
+          <strong>James R.</strong>
+          <p class="muted">Professional studio, very hygienic. Highly recommended.</p>
+        </div>
+        <div style="min-width:220px">
+          <strong>Maria L.</strong>
+          <p class="muted">Got a cover-up and it turned out perfect. Thank you!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Booking -->
+    <section id="contact" class="contact">
+      <div>
+        <h3 style="margin-top:0">Book a session or ask a question</h3>
+        <form id="contactForm" onsubmit="handleForm(event)">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="tel" id="phone" placeholder="Phone (optional)" />
+          <textarea id="message" rows="4" placeholder="Brief description of tattoo, size & location" required></textarea>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn-primary" type="submit">Send request</button>
+            <a class="btn-ghost" href="#book">Request a callback</a>
+          </div>
+        </form>
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Or DM us on Instagram: <a href="https://instagram.com/tattooend.studio" target="_blank" rel="noreferrer noopener" style="color:var(--accent)">@tattooend.studio</a></div>
+      </div>
+      <aside>
+        <div class="map">
+          <!-- Replace iframe src with actual Google Maps embed for studio addresses -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.1234567890123!2d19.0414!3d47.4979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0000000000000000!2sBudapest!5e0!3m2!1sen!2sus!4v0000000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>TattooEnd Studio</strong>
+          <div class="muted">Budapest • London</div>
+        </div>
+        <div class="muted">© <span id="year"></span> TattooEnd — Designed by <em>Upsiteful</em></div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="https://instagram.com/tattooend.studio" target="_blank" rel="noreferrer noopener">Instagram</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close-x" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    // small UX JS: mobile nav toggle, gallery lightbox and form handler
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        const full = img.dataset.full || img.src;
+        lightboxImg.src = full; lightboxImg.alt = img.alt || 'Tattoo image';
+        lightbox.style.display = 'flex'; lightbox.setAttribute('aria-hidden','false');
+      });
+    });
+    function closeLightbox(){ lightbox.style.display='none'; lightbox.setAttribute('aria-hidden','true'); lightboxImg.src=''; }
+    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+
+    // contact form basic handler (no backend)
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ alert('Please fill required fields'); return; }
+      // For the demo: prepare mailto or copy payload
+      const subject = encodeURIComponent('Website inquiry from demo site - ' + name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nMessage:\n'+message);
+      window.location.href = 'mailto:hello@tattooend.studio?subject='+subject+'&body='+body;
+    }
+
+    // accessibility: close lightbox with Esc
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+  </script>
+
+  <!-- NOTES: 
+    - Replace placeholder images with direct links to the studio's Instagram images for an instant authentic demo.
+    - Replace the phone number & Google Maps iframe with real studio data.
+    - For production: hook the contact form to a server endpoint, add reCAPTCHA and schedule/booking integration (Acuity, Calendly or a simple Calendly embed).
+    - Consider adding structured data (JSON-LD) for LocalBusiness and Organization before publishing for better SEO.
+  -->
+</body>
+</html>
